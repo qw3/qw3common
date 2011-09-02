@@ -1,0 +1,24 @@
+div.pagination {
+	float:left;
+	display: block;
+	margin: 20px 0;
+	text-align: center;
+	width: 100%;
+}
+
+div.pagination a,
+div.pagination span, 
+div.pagination em {
+	background-color: #F3F1EC;
+	border: 1px solid #ccc;
+    cursor: pointer;
+    margin: 0;
+    padding: 4px 10px;
+    color: #373737;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+div.pagination em {
+	font-style: normal;
+	font-weight: bold;
+}
