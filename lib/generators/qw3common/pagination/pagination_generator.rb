@@ -19,10 +19,6 @@ module Qw3common
         copy_file "public/stylesheets/pagination.css", "public/javascript/qw3common/pagination.css"
       end
       
-      def create_helpers_files
-        copy_file "helpers/pagination_helper.rb", "app/helpers/pagination_helper.rb"
-      end
-      
     end
   end
 end

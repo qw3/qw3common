@@ -34,17 +34,4 @@ module CommonHelper
     link_to imagem, url
   end
   
-  def pagination_footer var
-    html = []
-    html.push '<div class="footer"><div id="paginacao">'
-    html.push will_paginate var
-    html.push '</div></div>'
-    
-    return html.join('').html_safe
-  end
-  
-  def currency_br_to_number(currency)
-    return currency.to_s.gsub('R$', '').gsub(',','.').to_f
-  end
-  
 end

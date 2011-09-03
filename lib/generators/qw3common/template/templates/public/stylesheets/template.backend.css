@@ -1,0 +1,216 @@
+body {
+  background: white;
+  height:100%;
+  font-family:	"Lucida Grande","Lucida Sans Unicode",helvetica,arial,verdana,sans-serif;
+  margin:0; padding:0;
+  color: #333; 
+}
+
+body, p, ol, ul, td {
+  font-size:   13px;
+  line-height: 18px;
+}
+
+div.field {
+	background: #fff;
+	padding: 5px;
+}
+
+div.field:hover {
+	background: #fbf6b2;
+}
+
+div.field label {
+	display: block;
+	font-size: 12px;
+}
+
+div.field input[type="text"],
+div.field input[type="email"],
+div.field input[type="password"] {
+	border: 1px solid #888;
+	padding: 4px;
+	font-size: 13px;
+	box-shadow: 0 0 2px #a2a2a2;
+	-moz-box-shadow: 0 0 2px #a2a2a2;
+	-webkit-box-shadow: 0 0 2px #a2a2a2;
+}
+
+div.field input[type="text"]:hover,
+div.field input[type="email"]:hover,
+div.field input[type="password"]:hover {
+	border: 1px solid #666;
+	box-shadow: 0 0 2px #999;
+	-moz-box-shadow: 0 0 2px #999;
+	-webkit-box-shadow: 0 0 2px #999;
+}
+
+#header {
+  height: 65px;
+  background: url("../images/headerbg.png");
+}
+
+#logo img {
+  height: 60px;
+}
+
+#background {
+  width: 100%;
+}
+
+div#logo {
+  float:left;
+}
+
+div#welcome {
+  float:right;
+  color: #fff;
+  float: right;
+  margin: 10px;
+  text-align: right;
+  width: 300px;
+}
+
+div#welcome a {
+	color: #fbc9bb;
+}
+
+div#welcome .welcome, div#welcome .logout {
+  display:inline;
+  margin-left: 5px;
+}
+
+div#contentbody {
+   	background-color: white;
+    border-left: 1px solid #CCCCCC;
+    float: left;
+    margin-left: -2px;
+    min-height: 500px;
+    width: 80%;
+}
+
+#leftbar {
+  background: #ebebeb;
+  border-right: 1px solid #ccc;
+  width: 20%;
+  min-width: 210px;
+  height: 100%;
+  float: left;
+}
+
+#leftbar ul.menu li {
+	margin-right: -1px;
+	width: 100%;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #CCC;
+	display: block;
+}
+
+#leftbar ul.menu li a {
+  	display: block;
+	padding: 10px 20px 12px 30px;
+	color: #4B4F5D;
+	font-weight: bold;
+	text-shadow: 0 1px 0 white;
+}
+#leftbar ul.menu li a span {
+	margin-left: 15px;
+}
+
+#leftbar ul.menu li:hover {     
+  background: #d6d6d6;
+}
+
+.menu-item-aberto {
+	display: block !important;
+}
+
+.menu-item-fechado {
+	display: none !important;
+}
+
+div.page_header {
+	background: url("../images/bg_window_header.png");
+	border-radius:none;-moz-border-radius:none;-webkit-border-radius:none;
+}
+
+div#contentbody div.inside {
+	background: url('../images/bg_ip.png') repeat-x;
+	margin:0;
+	padding: 15px;
+}
+
+#leftbar ul.submenu {
+	background: url('../images/bg_ip.png') repeat-x scroll 0 0 #d4d4d4;
+	padding-top: 10px;
+}
+
+#leftbar ul.submenu li {
+	background: #d4d4d4;
+	border:none;
+}
+
+#leftbar ul.submenu li:hover {
+	background: #cacaca;
+}
+
+#leftbar ul.submenu li a span {
+	margin:0;
+}
+
+.clear {
+  clear:both;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a,a:visited { color: #333; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.lista div.remover a, table.list td.remover a {
+	background: url(../images/icons/delete.png) no-repeat;
+	padding-left: 24px;
+	display: inline-block;
+}
