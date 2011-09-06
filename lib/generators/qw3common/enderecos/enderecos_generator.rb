@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Qw3common
   module Generators
     class EnderecosGenerator < Rails::Generators::Base

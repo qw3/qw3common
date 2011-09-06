@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Qw3common
   module Generators
     class PaperclipGenerator < Rails::Generators::Base
