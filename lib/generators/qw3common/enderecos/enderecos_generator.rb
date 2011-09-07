@@ -33,6 +33,7 @@ module Qw3common
         append_file 'db/seeds.rb' do
            "\nrequire File.expand_path( '../seeds/enderecos', __FILE__ )\n"
         end
+        rake 'db:migrate'
         rake 'db:seed'
       end
       
