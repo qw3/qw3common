@@ -1,7 +1,13 @@
 # -*- encoding : utf-8 -*-
+
+require 'rails/generators'
+require 'rails/generators/migration'
+
 module Qw3common
   module Generators
     class EnderecosGenerator < Rails::Generators::Base
+      
+      include Rails::Generators::Migration
       
       source_root File.expand_path("../templates", __FILE__)
       
