@@ -8,6 +8,7 @@ module Qw3common
         generate 'qw3common:paperclip'
         generate 'qw3common:template'
         generate 'qw3common:enderecos'
+        generate 'qw3common:settings'
       end
       
     end
