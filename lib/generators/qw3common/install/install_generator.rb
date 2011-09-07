@@ -6,6 +6,7 @@ module Qw3common
         generate 'qw3common:pagination'
         generate 'qw3common:paperclip'
         generate 'qw3common:template'
+        generate 'qw3common:enderecos'
       end
       
     end

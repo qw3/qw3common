@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title><%= @titulo %></title>
+	  <%= stylesheet_link_tag 'login', 'notice' %>
+	  <%= javascript_include_tag :defaults, 'notice' %>
+	  <%= csrf_meta_tag %>	
+	</head>
+	<body class="loginlayout">
+		
+		<% if !notice.nil? %>
+			<div class="notice">
+				<%= notice %>
+			</div>
+		<% end %>
+		
+		<div class="login">
+	  		<%= yield %>
+		</div>
+	
+	</body>
+</html>

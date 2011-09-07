@@ -1,0 +1,47 @@
+<%= f.fields_for :endereco do |endereco_form| %>
+
+	<div class="field rua">
+	  <%= endereco_form.label :rua %>
+	  <%= endereco_form.text_field :rua %>
+	  <%= endereco_form.text_field :numero, :class => :num %>
+	</div>
+	<div class="field">
+	  <%= endereco_form.label :complemento %>
+	  <%= endereco_form.text_field :complemento %>
+	</div>
+	<div class="field">
+	  <%= endereco_form.label :bairro %>
+	  <%= endereco_form.text_field :bairro %>
+	</div>
+	<div class="field">
+	  <%= endereco_form.label :cep, 'CEP' %>
+	  <%= endereco_form.text_field :cep, :onkeypress => 'mascara(this, checaCEP)', :maxlength => 9 %>
+	</div>
+	
+	<%= hidden_field_tag "tipo", tipo %>
+	<div class="field">
+	  <% if endereco_form.object.new_record? 
+	        estado_selecionado = '' 
+	      else 
+	        estado_selecionado = endereco_form.object.endereco.cidade.estado.id 
+	      end
+	  %>
+	  <%= label :estado, 'Estado' %>
+	  <%= select "estado", "id", options_for_select( Estado.find(:all, :order => "nome").collect{ |e| [e.nome, e.id] }, estado_selecionado ), 
+	             {:include_blank => '-- Selecione um estado --'}
+             
+	  %>
+	</div>
+	<div class="field">
+	  <%= endereco_form.label :cidade_id %>
+	  <div id="combo_cidade">
+	    <% if endereco_form.object.new_record? %>
+	      <%= endereco_form.select "cidade_id", {}, {:prompt => '-- Selecione primeiro um estado --'} %>
+	    <% else %>
+	      <%= endereco_form.select "cidade_id", options_for_select( Cidade.where( :estado_id => endereco_form.object.endereco.cidade.estado.id ).collect{ |c| [c.nome, c.id] }, endereco_form.object.endereco.cidade.id ), {:prompt => '-- Selecione uma cidade --'} %>
+	    <% end %>
+	  </div>
+	</div>
+
+
+<% end %>

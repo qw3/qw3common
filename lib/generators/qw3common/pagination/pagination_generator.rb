@@ -14,9 +14,9 @@ module Qw3common
       
       def create_public_files
         #javascripts
-        copy_file "public/javascripts/pagination.js", "public/javascript/qw3common/pagination.js"
+        copy_file "assets/javascripts/pagination.js", "assets/javascript/qw3/pagination.js"
         #stylesheets
-        copy_file "public/stylesheets/pagination.css", "public/javascript/qw3common/pagination.css"
+        copy_file "assets/stylesheets/pagination.css", "public/javascript/qw3/pagination.css"
       end
       
       def create_helpers_files

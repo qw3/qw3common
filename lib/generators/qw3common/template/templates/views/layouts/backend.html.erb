@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @titulo %></title>
+    <%= stylesheet_link_tag 'template', 'template.backend', 'notice' %>
+    <%= javascript_include_tag :defaults, 'checkbox', 'mascara', 'notice', 'titulo_clicavel' %>
+    <%= csrf_meta_tag %>
+
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo">
+        <%= link_to image_tag('logo.png'), administrator_home_path, :target => '_self' %>
+      </div>
+      <div id="welcome">
+        <!-- Insira as informações de login e logout -->
+      </div>
+    </div>
+    
+    <% if !notice.nil? %>
+      <div id="notice">
+        <%= notice %>
+      </div>
+    <% end %>
+    
+    <div id="leftbar">
+      <%= render 'template/leftbar' %>
+    </div>
+    
+    <div id="contentbody">      
+      <%= yield %>
+    </div>
+    
+  </body>
+</html>
