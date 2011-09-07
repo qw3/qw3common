@@ -29,12 +29,17 @@ module Qw3common
       end
       
       def create_seed
+        
         copy_file 'db/seeds.rb', 'db/seeds/enderecos.rb'
         append_file 'db/seeds.rb' do
            "\nrequire File.expand_path( '../seeds/enderecos', __FILE__ )\n"
         end
         rake 'db:migrate'
-        rake 'db:seed'
+        
+        if yes? 'Quer rodar o seeds de Endereço?'
+          rake 'db:seed'
+        end
+        
       end
       
       def copy_javascript_files
