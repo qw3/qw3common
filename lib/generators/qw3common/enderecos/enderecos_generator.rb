@@ -28,6 +28,10 @@ module Qw3common
         migration_template 'db/migrate/create_enderecos.rb', 'db/migrate/create_enderecos.rb'
       end
       
+      def copy_javascript_files
+        copy_file 'assets/javascripts/endereco.js', 'assets/javascripts/qw3/endereco.js'
+      end
+      
       def create_seed
         
         copy_file 'db/seeds.rb', 'db/seeds/enderecos.rb'
@@ -40,10 +44,6 @@ module Qw3common
           rake 'db:seed'
         end
         
-      end
-      
-      def copy_javascript_files
-        copy_file 'assets/javascripts/endereco.js', 'assets/javascripts/qw3/endereco.js'
       end
       
     end
