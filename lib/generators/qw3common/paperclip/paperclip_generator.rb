@@ -26,9 +26,9 @@ module Qw3common
       end
       
       def create_missing_images_files
-        copy_file "public/images/missing/original.png", "public/images/qw3common/missing/original.png"
-        copy_file "public/images/missing/small.png", "public/images/qw3common/missing/small.png"
-        copy_file "public/images/missing/thumb.png", "public/images/qw3common/missing/thumb.png"
+        copy_file "public/images/missing/original.png", "assets/images/qw3common/missing/original.png"
+        copy_file "public/images/missing/small.png", "assets/images/qw3common/missing/small.png"
+        copy_file "public/images/missing/thumb.png", "assets/images/qw3common/missing/thumb.png"
       end
       
     end

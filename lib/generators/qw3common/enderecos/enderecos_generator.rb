@@ -30,7 +30,7 @@ module Qw3common
       
       def create_seed
         copy_file 'db/seeds.rb', 'db/seeds/enderecos.rb'
-        inject_into_file 'db/seeds.rb' do
+        append_file 'db/seeds.rb' do
            "\nrequire File.expand_path( '../seeds/enderecos', __FILE__ )\n"
         end
         rake 'db:seed'
