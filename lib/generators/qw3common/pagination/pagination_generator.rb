@@ -4,6 +4,10 @@ module Qw3common
       
       source_root File.expand_path("../templates", __FILE__)
       
+      def insert_gem
+        gem "will_paginate"
+      end
+      
       def create_config_files
         #initializers
         copy_file "config/initializers/pagination.rb", "config/initializers/qw3common/pagination.rb"
@@ -17,14 +21,6 @@ module Qw3common
         copy_file "assets/javascripts/pagination.js", "assets/javascript/qw3/pagination.js"
         #stylesheets
         copy_file "assets/stylesheets/pagination.css", "public/javascript/qw3/pagination.css"
-      end
-      
-      def create_helpers_files
-        copy_file "helpers/pagination_helper.rb", "app/helpers/pagination_helper.rb"
-      end
-      
-      def insert_gem
-        gem "will_paginate"
       end
       
     end
