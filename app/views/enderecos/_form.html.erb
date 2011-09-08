@@ -23,7 +23,7 @@
 	  <% if endereco_form.object.new_record? 
 	        estado_selecionado = '' 
 	      else 
-	        estado_selecionado = endereco_form.object.endereco.cidade.estado.id 
+	        estado_selecionado = endereco_form.object.cidade.estado.id 
 	      end
 	  %>
 	  <%= label :estado, 'Estado' %>
@@ -38,7 +38,7 @@
 	    <% if endereco_form.object.new_record? %>
 	      <%= endereco_form.select "cidade_id", {}, {:prompt => '-- Selecione primeiro um estado --'} %>
 	    <% else %>
-	      <%= endereco_form.select "cidade_id", options_for_select( Cidade.where( :estado_id => endereco_form.object.endereco.cidade.estado.id ).collect{ |c| [c.nome, c.id] }, endereco_form.object.endereco.cidade.id ), {:prompt => '-- Selecione uma cidade --'} %>
+	      <%= endereco_form.select "cidade_id", options_for_select( Cidade.where( :estado_id => endereco_form.object.cidade.estado.id ).collect{ |c| [c.nome, c.id] }, endereco_form.object.cidade.id ), {:prompt => '-- Selecione uma cidade --'} %>
 	    <% end %>
 	  </div>
 	</div>
