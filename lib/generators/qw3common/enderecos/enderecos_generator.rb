@@ -29,7 +29,7 @@ module Qw3common
       end
       
       def copy_javascript_files
-        copy_file 'assets/javascripts/endereco.js', 'assets/javascripts/qw3/endereco.js'
+        copy_file 'assets/javascripts/endereco.js', 'public/javascripts/qw3/endereco.js'
       end
       
       def create_seed
