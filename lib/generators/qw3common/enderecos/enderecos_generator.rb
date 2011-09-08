@@ -46,6 +46,10 @@ module Qw3common
         
       end
       
+      def create_route
+        route 'match "/enderecos/gerar_combo_cidade" => "enderecos#gerar_combo_cidade"'
+      end
+      
     end
   end
 end
