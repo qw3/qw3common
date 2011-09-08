@@ -11,7 +11,7 @@ module Qw3common
       
       def create_config_files
         #initializers
-        copy_file "config/initializers/pagination.rb", "config/initializers/qw3common/pagination.rb"
+        copy_file "config/initializers/pagination.rb", "config/initializers/qw3_pagination.rb"
         #locales
         copy_file "config/locales/pagination.en.yml", "config/locales/qw3common.pagination.en.yml"
         copy_file "config/locales/pagination.pt-BR.yml", "config/locales/qw3common.pagination.pt-BR.yml"
