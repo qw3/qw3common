@@ -38,6 +38,10 @@ module Qw3common
         copy_file 'views/template/_leftbar.html.erb', 'app/views/template/_leftbar.html.erb'
       end
       
+      def copy_locale_files
+        copy_file 'config/locales/pt-BR.yml', 'config/locales/pt-BR.yml'
+      end
+      
     end
   end
 end

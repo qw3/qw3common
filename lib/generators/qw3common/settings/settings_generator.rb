@@ -7,9 +7,7 @@ module Qw3common
       
       def install_settings
         
-        if yes? 'Gerar o Settings?'
-          
-          gem 'rails-settings', :git => "git://github.com/100hz/rails-settings.git"
+        if yes? 'Já executou um bundle install?'
           
           generate "settings", 'settings'
           rake 'db:migrate'
