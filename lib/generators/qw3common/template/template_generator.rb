@@ -19,23 +19,25 @@ module Qw3common
       end
       
       def generate_javascript_files
-        copy_file 'assets/javascripts/checkbox.js', 'app/assets/javascripts/qw3/checkbox.js'
-        copy_file 'assets/javascripts/mascara.js', 'app/assets/javascripts/qw3/mascara.js'
-        copy_file 'assets/javascripts/notice.js', 'app/assets/javascripts/qw3/notice.js'
-        copy_file 'assets/javascripts/titulo_clicavel.js', 'app/assets/javascripts/qw3/titulo_clicavel.js'
+        copy_file 'assets/javascripts/checkbox.js', 'public/javascripts/qw3/checkbox.js'
+        copy_file 'assets/javascripts/mascara.js', 'public/javascripts/qw3/mascara.js'
+        copy_file 'assets/javascripts/notice.js', 'public/javascripts/qw3/notice.js'
+        copy_file 'assets/javascripts/titulo_clicavel.js', 'public/javascripts/qw3/titulo_clicavel.js'
       end
       
       def generate_stylesheet_files
-        copy_file 'assets/stylesheets/login.css', 'app/assets/stylesheets/qw3/login.css'
-        copy_file 'assets/stylesheets/notice.css', 'app/assets/stylesheets/qw3/notice.css'
-        copy_file 'assets/stylesheets/template.backend.css', 'app/assets/stylesheets/qw3/template.backend.css'
-        copy_file 'assets/stylesheets/template.css', 'app/assets/stylesheets/qw3/template.css'
+        copy_file 'assets/stylesheets/login.css', 'public/stylesheets/qw3/login.css'
+        copy_file 'assets/stylesheets/notice.css', 'public/stylesheets/qw3/notice.css'
+        copy_file 'assets/stylesheets/template.backend.css', 'public/stylesheets/qw3/template.backend.css'
+        copy_file 'assets/stylesheets/template.css', 'public/stylesheets/qw3/template.css'
       end
       
       def generate_html_layouts
-        copy_file 'views/layouts/backend_login.html.erb', 'app/views/layouts/backend_login.html.erb'
-        copy_file 'views/layouts/backend.html.erb', 'app/views/layouts/backend.html.erb'
-        copy_file 'views/template/_leftbar.html.erb', 'app/views/template/_leftbar.html.erb'
+        if yes? 'Gerar layouts de exemplo?'
+          copy_file 'views/layouts/backend_login.html.erb', 'app/views/layouts/backend_login.html.erb'
+          copy_file 'views/layouts/backend.html.erb', 'app/views/layouts/backend.html.erb'
+          copy_file 'views/template/_leftbar.html.erb', 'app/views/template/_leftbar.html.erb'
+        end
       end
       
       def copy_locale_files
