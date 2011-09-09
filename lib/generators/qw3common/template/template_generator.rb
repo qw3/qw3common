@@ -34,8 +34,8 @@ module Qw3common
       
       def generate_html_layouts
         if yes? 'Gerar layouts de exemplo?'
-          copy_file 'views/layouts/backend_login.html.erb', 'app/views/layouts/backend_login.html.erb'
-          copy_file 'views/layouts/backend.html.erb', 'app/views/layouts/backend.html.erb'
+          copy_file 'views/layouts/backend_login.html.erb', 'app/views/layouts/qw3/backend_login.html.erb'
+          copy_file 'views/layouts/backend.html.erb', 'app/views/layouts/qw3/backend.html.erb'
           copy_file 'views/template/_leftbar.html.erb', 'app/views/template/_leftbar.html.erb'
         end
       end
