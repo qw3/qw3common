@@ -36,7 +36,7 @@ module Qw3common
         copy_file 'assets/images/barra-16.gif', 'public/images/barra-16.gif'
         copy_file 'assets/images/bg_ip.png', 'public/images/bg_ip.png'
         copy_file 'assets/images/bg_left.jpg', 'public/images/bg_left.jpg'
-        copy_file 'assets/images/bg_window_header.png', 'public/images/window_header.png'
+        copy_file 'assets/images/bg_window_header.png', 'public/images/bg_window_header.png'
         copy_file 'assets/images/bt_g.png', 'public/images/bt_g.png'
         copy_file 'assets/images/headerbg.png', 'public/images/headerbg.png'
       end
