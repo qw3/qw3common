@@ -32,6 +32,15 @@ module Qw3common
         copy_file 'assets/stylesheets/template.css', 'public/stylesheets/qw3/template.css'
       end
       
+      def generate_images
+        copy_file 'assets/images/barra-16.gif', 'public/images/barra-16.gif'
+        copy_file 'assets/images/bg_ip.png', 'public/images/bg_ip.png'
+        copy_file 'assets/images/bg_left.png', 'public/images/bg_left.png'
+        copy_file 'assets/images/bg_window_header.png', 'public/images/window_header.png'
+        copy_file 'assets/images/bt_g', 'public/images/bt_g.png'
+        copy_file 'assets/images/headerbg.png', 'public/images/headerbg.png'
+      end
+      
       def generate_html_layouts
         if yes? 'Gerar layouts de exemplo?'
           copy_file 'views/layouts/backend_login.html.erb', 'app/views/layouts/qw3/backend_login.html.erb'
