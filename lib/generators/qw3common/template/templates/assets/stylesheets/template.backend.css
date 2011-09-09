@@ -47,7 +47,7 @@ div.field input[type="password"]:hover {
 
 #header {
   height: 65px;
-  background: url("../images/headerbg.png");
+  background: url("../../images/headerbg.png");
 }
 
 #logo img {
@@ -130,18 +130,18 @@ div#contentbody {
 }
 
 div.page_header {
-	background: url("../images/bg_window_header.png");
+	background: url("../../images/bg_window_header.png");
 	border-radius:none;-moz-border-radius:none;-webkit-border-radius:none;
 }
 
 div#contentbody div.inside {
-	background: url('../images/bg_ip.png') repeat-x;
+	background: url('../../images/bg_ip.png') repeat-x;
 	margin:0;
 	padding: 15px;
 }
 
 #leftbar ul.submenu {
-	background: url('../images/bg_ip.png') repeat-x scroll 0 0 #d4d4d4;
+	background: url('../../images/bg_ip.png') repeat-x scroll 0 0 #d4d4d4;
 	padding-top: 10px;
 }
 
@@ -210,7 +210,7 @@ div.field, div.actions {
 }
 
 div.lista div.remover a, table.list td.remover a {
-	background: url(../images/icons/delete.png) no-repeat;
+	background: url(../../images/icons/delete.png) no-repeat;
 	padding-left: 24px;
 	display: inline-block;
 }
