@@ -23,6 +23,7 @@ module Qw3common
         copy_file 'assets/javascripts/mascara.js', 'public/javascripts/qw3/mascara.js'
         copy_file 'assets/javascripts/notice.js', 'public/javascripts/qw3/notice.js'
         copy_file 'assets/javascripts/titulo_clicavel.js', 'public/javascripts/qw3/titulo_clicavel.js'
+        copy_file 'assets/javascripts/livevalidation.js', 'public/javascripts/qw3/livevalidation.js'
       end
       
       def generate_stylesheet_files
