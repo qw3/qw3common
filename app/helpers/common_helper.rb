@@ -9,17 +9,17 @@ module CommonHelper
     check_box_tag "cid[]", id, false, { :id => "cb#{id}", :class => "cid" }
   end
   
-  def ordem_th
-    link_to "#", :onclick => 'definirAction( "banners_form", "/administrator/banners/multi_ordenar" )', :class => "ordenar" do
+  def ordem_th( model )
+    link_to "#", :onclick => 'definirAction( "banners_form", "/administrator/#{model}/multi_ordenar" )', :class => "ordenar" do
       image_tag "/images/icons/salvar.gif"
     end
   end
   
-  def ordenar_td id
+  def ordenar_td id, model
     html = []
     html.push '<div class="ordem-setas">'
-    html.push link_to( image_tag( "/images/seta-baixo.png" ), "#", :onclick => "definirOrdem( \"banners_form\", \"/administrator/banners/ordenar?cima=0\", #{id} )" )
-    html.push link_to( image_tag( "/images/seta-cima.png" ), "#", :onclick => "definirOrdem( \"banners_form\", \"/administrator/banners/ordenar?cima=1\", #{id} )" )
+    html.push link_to( image_tag( "/images/seta-baixo.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
+    html.push link_to( image_tag( "/images/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
     html.push '</div>'
     
     return html.join('').html_safe
