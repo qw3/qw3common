@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'devise'
   s.add_dependency 'will_paginate'
   s.add_dependency 'paperclip'
+  s.add_dependency 'brstring'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
