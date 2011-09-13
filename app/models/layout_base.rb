@@ -1,7 +1,7 @@
-module Layout
-  class Base
-    attr_accessor :routes_table
+class LayoutBase
   
+  attr_accessor :routes_table
+
   # Define os mapeamentos do layout.
   # Exemplo de utilização:
   # 
@@ -86,5 +86,4 @@ module Layout
       end
       
     end
-  end
 end
