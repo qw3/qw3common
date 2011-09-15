@@ -1,1 +1,1 @@
-Settings.defaults['PAPERCLIP.missing_path'] = 'missing'
+Settings.defaults['PAPERCLIP.missing_path'] = 'qw3common/missing'
