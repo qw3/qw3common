@@ -12,7 +12,6 @@ module Qw3common
       end
       
       def include_gem_settings
-        gem "rails-settings", :git => "git://github.com/100hz/rails-settings.git"
         gem "brstring"
       end
       
