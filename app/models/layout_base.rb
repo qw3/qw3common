@@ -15,7 +15,7 @@ class LayoutBase
   # map 'controller#action', 'layout2'
   def initialize
     @routes_table = Hash.new
-    self.define
+    self.mapear
   end
   
   def layout_from_split_elements params
