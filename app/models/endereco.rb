@@ -2,6 +2,6 @@
 class Endereco < ActiveRecord::Base
   belongs_to :cidade
   
-  validate :cidade_id, :rua, :cep, :presence => true
+  validates :cidade_id, :rua, :cep, :presence => true
   
 end
