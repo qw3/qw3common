@@ -4,8 +4,8 @@ class Endereco < ActiveRecord::Base
   
   validates :cidade_id, :rua, :cep, :presence => true
   
-  def Endereco.bairros(cidade_id = nil)
-    conditions = " AND cidade_id = #{cidade_id}" unless cidade_id.nil?
+  def Endereco.bairros(cidade = nil)
+    conditions = " AND cidade_id = #{cidade.id}" unless cidade_id.nil?
     bairros = Endereco.select( 'distinct(bairro)' ).where( "bairro IS NOT NULL #{conditions}" ).order('bairro ASC')
     bairros_array = []
     bairros.each do |b|
