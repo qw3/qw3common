@@ -1,5 +1,11 @@
+<%= javascript_include_tag 'app/cep.js' %>
+
 <%= f.fields_for :endereco do |endereco_form| %>
 
+	<div class="field">
+	  <%= endereco_form.label :cep, 'CEP' %>
+	  <%= endereco_form.text_field :cep, :onkeypress => 'mascara(this, checaCEP)', :maxlength => 9 %>
+	</div>
 	<div class="field rua">
 	  <%= endereco_form.label :rua %>
 	  <%= endereco_form.text_field :rua %>
@@ -13,11 +19,7 @@
 	  <%= endereco_form.label :bairro %>
 	  <%= endereco_form.text_field :bairro %>
 	</div>
-	<div class="field">
-	  <%= endereco_form.label :cep, 'CEP' %>
-	  <%= endereco_form.text_field :cep, :onkeypress => 'mascara(this, checaCEP)', :maxlength => 9 %>
-	</div>
-	
+
 	<%= hidden_field_tag "tipo", tipo %>
 	<div class="field">
 	  <% if endereco_form.object.new_record? 

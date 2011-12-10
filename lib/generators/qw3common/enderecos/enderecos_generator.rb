@@ -48,6 +48,7 @@ module Qw3common
       
       def create_route
         route 'match "/enderecos/gerar_combo_cidade" => "enderecos#gerar_combo_cidade"'
+        route 'get "enderecos/atualiza_dados_cep"'
       end
       
     end
