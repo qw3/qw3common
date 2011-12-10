@@ -3,7 +3,6 @@ class EnderecosController < ApplicationController
     begin
       @endereco = BuscaEndereco.por_cep(params[:cep])
     rescue
-      return false
     end
     
     respond_to do |format|
