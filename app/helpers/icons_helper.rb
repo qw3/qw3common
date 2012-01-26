@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
-module BrHelper
+module IconsHelper
   
   def icon_path( file_name, size )
   
     exts = [ "bmp", "css", "csv", "doc", "docx", "eps", "gif", "html", "ico", "jpg", "js", "json", "mp3", "pdf", "php", "png", "ppt", "pptx", "psd", "svg", "swf", "tiff", "txt", "wav", "xls", "xlsx", "xml" ]
-    path = "images/icons/documents"
+    path = "icons/documents"
   
     # recuperando a extensão do arquivo
     file_name = file_name.split( "." )
