@@ -1,6 +1,6 @@
 <% unless @endereco.blank? %>
-  $("#cliente_endereco_attributes_rua").val( "<%= @endereco[0] + " " + @endereco[1] %>" )
-  $("#cliente_endereco_attributes_bairro").val( "<%= @endereco[2] %>" )
+  $("#<%= @objeto %>_endereco_attributes_rua").val( "<%= @endereco[0] + " " + @endereco[1] %>" )
+  $("#<%= @objeto %>_endereco_attributes_bairro").val( "<%= @endereco[2] %>" )
   <% estado = Estado.find_by_acronimo( @endereco[3].downcase ).id %>
   <% cidade = Cidade.where( :nome => @endereco[4], :estado_id => estado ).first.id %>
   $("#estado_id").val( "<%= estado %>" )
