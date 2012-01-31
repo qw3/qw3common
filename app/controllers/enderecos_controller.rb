@@ -2,7 +2,6 @@ class EnderecosController < ApplicationController
     def atualiza_dados_cep
     begin
       @endereco = BuscaEndereco.por_cep(params[:cep])
-      @objeto = params[:objeto]
     rescue
     end
     
