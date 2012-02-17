@@ -14,6 +14,7 @@ module Qw3common
       def include_gem_settings
         gem "brstring"
         gem "brcep"
+        gem "httparty"
       end
       
     end
