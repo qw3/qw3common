@@ -19,7 +19,7 @@ class Geoposicionamento
       resposta = Geoposicionamento.get( url )
       
       # Validando resposta
-      if resposta.blank? or resposta["GeocodeResponse"].blank? or !resposta["GeocodeResponse"]["status"].eql?( "OK")
+      if resposta.blank? or resposta["GeocodeResponse"].blank? or !resposta["GeocodeResponse"]["status"].eql?( "OK") or !resposta["GeocodeResponse"]["result"].include?("geometry")
         return nil
       end
       
