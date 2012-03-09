@@ -5,8 +5,8 @@ module CommonHelper
     check_box_tag "check_all", '', false, { :onclick => "checkOrUncheckAll( $(\"#check_all\").attr( \"checked\" ) )" }
   end
   
-  def check_all_td( id )
-    check_box_tag "cid[]", id, false, { :id => "cb#{id}", :class => "cid" }
+  def check_all_td( id, checked = false )
+    check_box_tag "cid[]", id, checked, { :id => "cb#{id}", :class => "cid" }
   end
   
   def ordem_th( model )
