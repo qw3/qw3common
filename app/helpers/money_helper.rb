@@ -9,7 +9,7 @@ module MoneyHelper
   end
   
   def number_to_money(number)
-    return number_to_currency(number).gsub('R$', '').gsub('&nbsp;', '').strip unless number.nil?
+    return number_to_currency(number).gsub('R$', '').gsub('&nbsp;', '').gsub("-", "").strip unless number.nil?
   end
   
 end
