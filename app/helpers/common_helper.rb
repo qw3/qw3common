@@ -30,7 +30,7 @@ module CommonHelper
     end
     
     if Rails.application.config.assets.enabled    
-      html.push link_to( image_tag( "/lib/qw3/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
+      html.push link_to( image_tag( "lib/qw3/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
     else
       html.push link_to( image_tag( "/images/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
     end
