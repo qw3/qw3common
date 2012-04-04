@@ -24,16 +24,15 @@ module CommonHelper
     html.push '<div class="ordem-setas">'
     
     if Rails.application.config.assets.enabled
-      html.push link_to( image_tag( "lib/qw3/seta-baixo.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
+      seta-baixo = image_tag( "lib/qw3/seta-baixo.png" )
+      seta-cima = image_tag( "lib/qw3/seta-cima.png" )
     else
-      html.push link_to( image_tag( "/images/seta-baixo.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
+      seta-baixo = image_tag( "/images/seta-baixo.png" )
+      seta-cima = image_tag( "/images/seta-cima.png" )
     end
     
-    if Rails.application.config.assets.enabled    
-      html.push link_to( image_tag( "lib/qw3/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
-    else
-      html.push link_to( image_tag( "/images/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
-    end
+    html.push link_to( seta-baixo, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
+    html.push link_to( seta-cima, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
     
     html.push '</div>'
     
