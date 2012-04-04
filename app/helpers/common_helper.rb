@@ -11,15 +11,30 @@ module CommonHelper
   
   def ordem_th( model )
     link_to "#", :onclick => 'definirAction( "banners_form", "/administrator/#{model}/multi_ordenar" )', :class => "ordenar" do
-      image_tag "/images/icons/salvar.gif"
+      if Rails.application.config.assets.enabled
+        image_tag "lib/qw3/salvar.gif"
+      else
+        image_tag "/images/icons/salvar.gif"
+      end
     end
   end
   
   def ordenar_td id, model
     html = []
     html.push '<div class="ordem-setas">'
-    html.push link_to( image_tag( "/images/seta-baixo.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
-    html.push link_to( image_tag( "/images/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
+    
+    if Rails.application.config.assets.enabled
+      html.push link_to( image_tag( "lib/qw3/seta-baixo.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
+    else
+      html.push link_to( image_tag( "/images/seta-baixo.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
+    end
+    
+    if Rails.application.config.assets.enabled    
+      html.push link_to( image_tag( "/lib/qw3/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
+    else
+      html.push link_to( image_tag( "/images/seta-cima.png" ), "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
+    end
+    
     html.push '</div>'
     
     return html.join('').html_safe
@@ -27,9 +42,17 @@ module CommonHelper
   
   def alternar url, valor
     if valor
-      imagem = image_tag 'icons/publicado.png', :size => '16x16'
+      if Rails.application.config.assets.enabled
+        imagem = image_tag 'backend/icons/publicado.png', :size => '16x16'
+      else
+        imagem = image_tag 'icons/publicado.png', :size => '16x16'
+      end
     else
-      imagem = image_tag 'icons/sair.png', :size => '16x16'
+      if Rails.application.config.assets.enabled
+        imagem = image_tag 'backend/icons/sair.png', :size => '16x16'
+      else
+        imagem = image_tag 'icons/sair.png', :size => '16x16'
+      end
     end
     link_to imagem, url
   end
