@@ -30,7 +30,6 @@ module CommonHelper
       seta_baixo = image_tag( "/images/seta-baixo.png" )
       seta_cima = image_tag( "/images/seta-cima.png" )
     end
-    
     html.push link_to( seta_baixo, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
     html.push link_to( seta_cima, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
     
