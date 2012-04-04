@@ -24,15 +24,15 @@ module CommonHelper
     html.push '<div class="ordem-setas">'
     
     if Rails.application.config.assets.enabled
-      seta-baixo = image_tag( "lib/qw3/seta-baixo.png" )
-      seta-cima = image_tag( "lib/qw3/seta-cima.png" )
+      seta_baixo = image_tag( "lib/qw3/seta-baixo.png" )
+      seta_cima = image_tag( "lib/qw3/seta-cima.png" )
     else
-      seta-baixo = image_tag( "/images/seta-baixo.png" )
-      seta-cima = image_tag( "/images/seta-cima.png" )
+      seta_baixo = image_tag( "/images/seta-baixo.png" )
+      seta_cima = image_tag( "/images/seta-cima.png" )
     end
     
-    html.push link_to( seta-baixo, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
-    html.push link_to( seta-cima, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
+    html.push link_to( seta_baixo, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=0\", #{id} )" )
+    html.push link_to( seta_cima, "#", :onclick => "definirOrdem( \"#{model}_form\", \"/administrator/#{model}/ordenar?cima=1\", #{id} )" )
     
     html.push '</div>'
     
@@ -42,15 +42,15 @@ module CommonHelper
   def alternar url, valor
     if valor
       if Rails.application.config.assets.enabled
-        imagem = image_tag 'lib/qw3/publicado.png', :size => '16x16'
+        imagem = image_tag( 'lib/qw3/publicado.png', :size => '16x16' )
       else
-        imagem = image_tag 'icons/publicado.png', :size => '16x16'
+        imagem = image_tag( 'icons/publicado.png', :size => '16x16' )
       end
     else
       if Rails.application.config.assets.enabled
-        imagem = image_tag 'lib/qw3/sair.png', :size => '16x16'
+        imagem = image_tag( 'lib/qw3/sair.png', :size => '16x16' )
       else
-        imagem = image_tag 'icons/sair.png', :size => '16x16'
+        imagem = image_tag( 'icons/sair.png', :size => '16x16' )
       end
     end
     link_to imagem, url
