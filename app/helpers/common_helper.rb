@@ -43,13 +43,13 @@ module CommonHelper
   def alternar url, valor
     if valor
       if Rails.application.config.assets.enabled
-        imagem = image_tag 'backend/icons/publicado.png', :size => '16x16'
+        imagem = image_tag 'lib/qw3/publicado.png', :size => '16x16'
       else
         imagem = image_tag 'icons/publicado.png', :size => '16x16'
       end
     else
       if Rails.application.config.assets.enabled
-        imagem = image_tag 'backend/icons/sair.png', :size => '16x16'
+        imagem = image_tag 'lib/qw3/sair.png', :size => '16x16'
       else
         imagem = image_tag 'icons/sair.png', :size => '16x16'
       end
