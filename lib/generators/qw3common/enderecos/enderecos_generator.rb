@@ -22,23 +22,35 @@ module Qw3common
       end
       
       def create_migrations
-        migration_template 'db/migrate/create_paises.rb', 'db/migrate/create_paises.rb'
-        migration_template 'db/migrate/create_estados.rb', 'db/migrate/create_estados.rb'
-        migration_template 'db/migrate/create_cidades.rb', 'db/migrate/create_cidades.rb'
-        migration_template 'db/migrate/create_enderecos.rb', 'db/migrate/create_enderecos.rb'
+        if yes?( "Criar migrations?" )
+          migration_template 'db/migrate/create_paises.rb', 'db/migrate/create_paises.rb'
+          sleep( 1.0 ) # Espera 1 segundo para que o timestamp da proxima migration seja diferente
+          migration_template 'db/migrate/create_estados.rb', 'db/migrate/create_estados.rb'
+          sleep( 1.0 ) # Espera 1 segundo para que o timestamp da proxima migration seja diferente
+          migration_template 'db/migrate/create_cidades.rb', 'db/migrate/create_cidades.rb'
+          sleep( 1.0 ) # Espera 1 segundo para que o timestamp da proxima migration seja diferente
+          migration_template 'db/migrate/create_enderecos.rb', 'db/migrate/create_enderecos.rb'
+          sleep( 1.0 ) # Espera 1 segundo para que o timestamp da proxima migration seja diferente
+        end
       end
       
       def copy_javascript_files
-        copy_file 'assets/javascripts/endereco.js', 'public/javascripts/qw3/endereco.js'
+        if yes?( "Copiar os arquivos javascript?")
+          copy_file 'assets/javascripts/endereco.js', 'public/javascripts/qw3/endereco.js'
+        end
       end
       
       def create_seed
-        
-        copy_file 'db/seeds.rb', 'db/seeds/enderecos.rb'
-        append_file 'db/seeds.rb' do
-           "\nrequire File.expand_path( '../seeds/enderecos', __FILE__ )\n"
+        if yes?( "Criar seeds?" )
+          copy_file 'db/seeds.rb', 'db/seeds/enderecos.rb'
+          append_file 'db/seeds.rb' do
+             "\nrequire File.expand_path( '../seeds/enderecos', __FILE__ )\n"
+          end
         end
-        rake 'db:migrate'
+        
+        if yes?( "Rodar rake db:migrate?" )
+          rake 'db:migrate'
+        end
         
         if yes? 'Quer rodar o seeds de Endereço?'
           rake 'db:seed'
@@ -47,8 +59,10 @@ module Qw3common
       end
       
       def create_route
-        route 'match "/enderecos/gerar_combo_cidade" => "enderecos#gerar_combo_cidade"'
-        route 'get "enderecos/atualiza_dados_cep"'
+        if yes?( "Criar rotas?" )
+          route 'match "/enderecos/gerar_combo_cidade" => "enderecos#gerar_combo_cidade"'
+          route 'get "enderecos/atualiza_dados_cep"'
+        end
       end
       
     end
