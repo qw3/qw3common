@@ -10,7 +10,7 @@ class Geoposicionamento
     
       # Montando a url do webservice de geoposicionamento do google
       url = Settings["GEOPOSICIONAMENTO.url"] + self.tratar_espacos( endereco.rua )
-      url += "+" + endereco.numero unless endereco.numero.blank?
+      url += "+" + endereco.numero.to_s unless endereco.numero.blank?
       url += ",+" + self.tratar_espacos( endereco.cidade.nome ) unless endereco.cidade_id.blank?
       url += ",+" + endereco.cidade.estado.acronimo.upcase unless endereco.cidade.estado_id.blank?
       url += "&sensor=false" # Parametro obrigatorio para indicar que requisição não vem de dispositivo com sensor de localização
