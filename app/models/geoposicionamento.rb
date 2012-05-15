@@ -1,6 +1,7 @@
 require "httparty"
 class Geoposicionamento
   
+  include BrHelper
   include HTTParty
   format :xml
   
@@ -9,10 +10,10 @@ class Geoposicionamento
     if !endereco.blank? and endereco.class.name.eql?( Endereco.name ) and !endereco.rua.blank?
     
       # Montando a url do webservice de geoposicionamento do google
-      url = Settings["GEOPOSICIONAMENTO.url"] + self.tratar_espacos( endereco.rua )
-      url += "+" + endereco.numero.to_s unless endereco.numero.blank?
-      url += ",+" + self.tratar_espacos( endereco.cidade.nome ) unless endereco.cidade_id.blank?
-      url += ",+" + endereco.cidade.estado.acronimo.upcase unless endereco.cidade.estado_id.blank?
+      url = Settings["GEOPOSICIONAMENTO.url"] + self.tratar_espacos( endereco.rua.remover_caracteres_especiais )
+      url += "+" + endereco.numero.to_s.remover_caracteres_especiais unless endereco.numero.blank?
+      url += ",+" + self.tratar_espacos( endereco.cidade.nome.remover_caracteres_especiais ) unless endereco.cidade_id.blank?
+      url += ",+" + endereco.cidade.estado.acronimo.remover_caracteres_especiais.upcase unless endereco.cidade.estado_id.blank?
       url += "&sensor=false" # Parametro obrigatorio para indicar que requisição não vem de dispositivo com sensor de localização
       
       # Realizando a requisição get
