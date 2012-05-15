@@ -27,7 +27,7 @@ module BrHelper
     
   end
   
-  def remover_caracteres_especiais( string )
+  def remover_caracteres_especiais string
     return string.remover_acentos.gsub(/[^a-zA-Z 0-9]/, "")
   end
   
