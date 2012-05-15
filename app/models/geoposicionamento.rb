@@ -1,19 +1,23 @@
 require "httparty"
 class Geoposicionamento
   
-  include BrHelper
   include HTTParty
   format :xml
   
   def Geoposicionamento.posicao endereco
+  
+    # importando o helper por meio de um objeto
+    # nao sei porque, mas o include nao funciona
+    brHelper = Object.new.extend(BrHelper)
+
     # Validando se parametro realmente é um objeto da classe Endereco
     if !endereco.blank? and endereco.class.name.eql?( Endereco.name ) and !endereco.rua.blank?
     
       # Montando a url do webservice de geoposicionamento do google
-      url = Settings["GEOPOSICIONAMENTO.url"] + self.tratar_espacos( remover_caracteres_especiais( endereco.rua ) )
-      url += "+" + remover_caracteres_especiais( endereco.numero.to_s ) unless endereco.numero.blank?
-      url += ",+" + remover_caracteres_especiais( self.tratar_espacos ( endereco.cidade.nome ) ) unless endereco.cidade_id.blank?
-      url += ",+" + remover_caracteres_especiais( endereco.cidade.estado.acronimo ).upcase unless endereco.cidade.estado_id.blank?
+      url = Settings["GEOPOSICIONAMENTO.url"] + brHelper.remover_caracteres_especiais( self.tratar_espacos( endereco.rua ) )
+      url += "+" + brHelper.remover_caracteres_especiais( endereco.numero.to_s ) unless endereco.numero.blank?
+      url += ",+" + brHelper.remover_caracteres_especiais( self.tratar_espacos( endereco.cidade.nome ) ) unless endereco.cidade_id.blank?
+      url += ",+" + brHelper.remover_caracteres_especiais( endereco.cidade.estado.acronimo.upcase ) unless endereco.cidade.estado_id.blank?
       url += "&sensor=false" # Parametro obrigatorio para indicar que requisição não vem de dispositivo com sensor de localização
       
       # Realizando a requisição get
