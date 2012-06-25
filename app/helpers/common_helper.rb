@@ -38,7 +38,7 @@ module CommonHelper
     return html.join('').html_safe
   end
   
-  def alternar url, valor
+  def alternar url, valor, remote = false
     if valor
       if Rails.application.config.assets.enabled
         imagem = image_tag( 'lib/qw3/publicado.png', :size => '16x16' )
@@ -52,7 +52,11 @@ module CommonHelper
         imagem = image_tag( 'icons/sair.png', :size => '16x16' )
       end
     end
-    link_to imagem, url
+    if remote
+      link_to imagem, url, :remote => true
+    else
+      link_to imagem, url
+    end
   end
   
 end
