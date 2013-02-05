@@ -2,7 +2,7 @@
 module CommonHelper
   
   def check_all_th()
-    check_box_tag "check_all", '', false, { :onclick => "checkOrUncheckAll( $(\"#check_all\").attr( \"checked\" ) )" }
+    check_box_tag "check_all", '', false, { :onclick => "checkOrUncheckAll( $(\"#check_all\").prop( \"checked\" ) )" }
   end
   
   def check_all_td( id, checked = false )
