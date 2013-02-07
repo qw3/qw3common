@@ -6,8 +6,15 @@
 	</div>
 	<div class="field rua">
 	  <%= endereco_form.label :rua %>
-	  <%= endereco_form.text_field :rua %>
-	  <%= endereco_form.text_field :numero, :class => :num %>
+	  <div class="yui3-g">
+	  	<div class="yui3-u-7-8">
+	  		<%= endereco_form.text_field :rua %>
+	  	</div>
+	  	<div class="yui3-u-1-24"></div>
+	  	<div class="yui3-u-1-12">
+	  		<%= endereco_form.text_field :numero, :class => :num %>
+	  	</div>
+		</div>
 	</div>
 	<div class="field">
 	  <%= endereco_form.label :complemento %>
