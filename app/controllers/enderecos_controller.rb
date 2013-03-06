@@ -1,5 +1,8 @@
 class EnderecosController < ApplicationController
-    def atualiza_dados_cep
+  
+  protect_from_forgery :except => [:gerar_combo_cidade]
+
+  def atualiza_dados_cep
     begin
       @endereco = BuscaEndereco.por_cep(params[:cep])
       @tipo = params[:tipo]
